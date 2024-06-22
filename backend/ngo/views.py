@@ -1,3 +1,4 @@
+from django.db.models import Q
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -9,7 +10,11 @@ def users_list(request, username, password):
     if username == "admin" and password == "admin":
         return Response({'success': 'Login Success'}, status=status.HTTP_200_OK)
     else:
-        return Response({'error': 'Login failed'}, status=status.HTTP_404_NOT_FOUND)
+        flag = Farmer.objects.filter(Q(username=username) & Q(reg_pwd=password))
+        if flag:
+            return Response({'success': 'Login Success'}, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'Login failed'}, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def list(request):
