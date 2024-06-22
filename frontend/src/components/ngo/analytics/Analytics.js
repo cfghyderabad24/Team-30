@@ -1,10 +1,12 @@
 // src/Analytics.js
 import React, { useEffect } from 'react';
+import './Analytics.css'
 
 const Analytics = () => {
   useEffect(() => {
     const containerDiv = document.getElementById('tableauContainer');
     containerDiv.innerHTML = `
+
       <div class='tableauPlaceholder' id='viz1719079596121' style='position: relative; width: 100%; height: 100%;'>
         <noscript>
           <a href='#'>
@@ -50,5 +52,4 @@ const Analytics = () => {
     </div>
   );
 };
-
 export default Analytics;

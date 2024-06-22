@@ -1,0 +1,40 @@
+/* src/TableauDashboard.css */
+
+.tableau-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa; /* Light gray background */
+    min-height: 100vh; /* Full height */
+    padding: 20px; /* Padding */
+  }
+  
+  .tableau-dashboard-title {
+    font-size: 2.5rem; /* Large font size */
+    font-weight: bold; /* Bold font */
+    margin-bottom: 20px; /* Margin below the title */
+    text-align: center; /* Center text */
+    color: #343a40; /* Dark gray color */
+  }
+  
+  .tableau-dashboard-wrapper {
+    width: 100%;
+    max-width: 1200px; /* Max width */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the wrapper */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  #tableauContainer {
+    width: 100%;
+    height: 800px; /* Fixed height */
+  }
+  
+  @media (max-width: 768px) {
+    #tableauContainer {
+      height: 600px; /* Adjust height for smaller screens */
+    }
+  }
+  
