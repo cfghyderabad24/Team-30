@@ -1,5 +1,0 @@
-ssh-keygen -o -t rsa -C "patnanasaideekshith@gmail.com"
-
-git status
-git add .
-git commit -
