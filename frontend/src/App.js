@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './App.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import RootLayout from './RootLayout';
+import LandInfo from './components/farmer/landInfo/LandInfo';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Blog from './components/farmer/blog/Blog';
+import Horibar from './components/farmer/horibar/Horibar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+<Router>
+      <Routes>
+        <Route path="/" element={<Horibar />} />
+        <Route path="/dashboard/*" element={<LandInfo />} />
+      </Routes>
+    </Router>
     </div>
   );
 }
