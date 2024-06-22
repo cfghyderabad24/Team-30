@@ -9,9 +9,7 @@ from .serializers import FarmerSerializer,MediaFileSerializer
 def users_list(request):
     if request.method == 'GET':
         data = Farmer.objects.all()
-
         serializer = FarmerSerializer(data, context={'request': request}, many=True)
-
         return Response(serializer.data)
 
     elif request.method == 'POST':
