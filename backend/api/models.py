@@ -2,10 +2,11 @@ from django.db import models
 
 
 class Farmer(models.Model):
+    id=models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    address=models.CharField(max_length=200)
+    address=models.CharField(max_length=100)
     pincode = models.CharField(max_length=6)
-    aadhar_no = models.CharFie  ld(max_length=12)
+    aadhar_no = models.CharField(max_length=12)
     contact_no = models.CharField(max_length=10)
     area_ploughed = models.FloatField()
     season = models.CharField(max_length=100)
@@ -17,3 +18,4 @@ class Farmer(models.Model):
     fertilizers_used = models.CharField(max_length=50, choices=[('organic', 'Organic'), ('chemical', 'Chemical'), ('bioinputs', 'Bioinputs')])
     date_of_harvesting = models.DateField()
     yield_kg = models.FloatField()
+
