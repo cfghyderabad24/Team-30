@@ -3,8 +3,9 @@ from django.db import models
 
 class Farmer(models.Model):
     name = models.CharField(max_length=100)
+    address=models.CharField(max_length=200)
     pincode = models.CharField(max_length=6)
-    aadhar_no = models.CharField(max_length=12)
+    aadhar_no = models.CharFie  ld(max_length=12)
     contact_no = models.CharField(max_length=10)
     area_ploughed = models.FloatField()
     season = models.CharField(max_length=100)
