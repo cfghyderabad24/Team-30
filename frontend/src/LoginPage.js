@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [userType, setUserType] = useState('admin'); // default to admin
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -16,10 +16,14 @@ const LoginPage = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     
-    axios.post('http://localhost:8000/login/', { email, password, user_type: userType })
+    axios.post('http://localhost:8000/login/', { name, password, user_type: userType })
       .then(response => {
         if (response.data.success) {
-          navigate('/home');
+          if (userType === 'admin') {
+            navigate('/analytics');
+          } else {
+            navigate('/home');
+          }
         } else {
           alert('Incorrect credentials');
         }
@@ -68,14 +72,14 @@ const LoginPage = () => {
               <div style={styles.loginForm}>
                 <h2 className="text-center mb-4">Login</h2>
                 <Form onSubmit={handleLogin}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                  <Form.Group controlId="formBasicName">
+                    <Form.Label>Name</Form.Label>
                     <Form.Control
-                      type="email"
-                      placeholder="Enter email"
+                      type="text"
+                      placeholder="Enter username"
                       required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </Form.Group>
 
