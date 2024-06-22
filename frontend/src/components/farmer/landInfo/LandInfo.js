@@ -1,9 +1,11 @@
 import React from 'react'
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import Horibar from '../horibar/Horibar';
 import './LandInfo.css'
 function LandInfo() {
   return (
-    <div className="form-container">
+    <div className="">
+        <Horibar></Horibar>
             <Form className="p-4">
                 <h1 className="mb-4">Farmer Registration</h1>
                 
