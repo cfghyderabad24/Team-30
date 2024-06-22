@@ -7,12 +7,12 @@ function Horibar() {
   return (
     <div>
       {/* Top Navbar */}
-      <Navbar bg="light" expand="lg" className="top-navbar">
+      <Navbar bg="dark" expand="lg" className="top-navbar">
         <Navbar.Brand href="#home">IFTR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/analytics">Home</Nav.Link>
+            <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/dashboard/blog">Blog</Nav.Link>
             <Nav.Link as={Link} to="/dashboard/landinfo">Land Info</Nav.Link>
             <Nav.Link as={Link} to="/dashboard/report">Report</Nav.Link>
@@ -29,7 +29,7 @@ function Horibar() {
             {/* Add more components and content here */}
           {/* </Col>
         </Row>
-      </Container> */} */
+      </Container> */} 
     </div>
   )
 }

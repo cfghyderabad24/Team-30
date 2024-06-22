@@ -1,43 +1,49 @@
-/* Dashboard.css */
-body {
-    background-color: #f8f9fa; /* Light grey background for the entire page */
+/* Horibar.css */
+
+.top-navbar {
+  background-color: #ff6600; /* A bright orange background */
+  padding: 15px 20px; /* Increase padding for a more substantial look */
+}
+
+.top-navbar .navbar-brand {
+  color: #ffffff; /* White text for the brand */
+  font-weight: bold;
+  font-size: 1.5rem; /* Increase the font size */
+}
+
+.top-navbar .navbar-brand:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.top-navbar .nav-link {
+  color: #ffffff; /* White text for the links */
+  font-size: 1.2rem; /* Increase the font size */
+  margin-right: 15px; /* Add some spacing between links */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.top-navbar .nav-link:hover {
+  color: #83f0a4; /* Dark blue on hover */
+}
+
+.top-navbar .nav-link.active {
+  font-weight: bold; /* Make active link bold */
+}
+
+.top-navbar .navbar-toggler {
+  border-color: #ffffff; /* White border for the toggle button */
+}
+
+.top-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  /* Custom white icon for the toggle button */
+}
+
+@media (max-width: 991px) {
+  .top-navbar .nav-link {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
-  
-  .dashboard {
-    font-family: Arial, sans-serif;
-  }
-  
-  .top-navbar {
-    padding: 20px 40px; /* Increased padding for the navbar */
-    background-color: #343a40; /* Dark background color for the navbar */
-  }
-  
-  .top-navbar .nav-links .nav-link {
-    color: #ffffff; /* White color for navbar links */
-    margin-right: 20px; /* Equal spacing between the links */
-    transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
-    padding: 10px 15px; /* Padding inside each nav link */
-    border-radius: 5px; /* Rounded corners for nav links */
-  }
-  
-  .top-navbar .nav-links .nav-link:last-child {
-    margin-right: 0; /* Remove right margin from the last nav link */
-  }
-  
-  .top-navbar .nav-links .nav-link:hover {
-    background-color: #495057; /* Slightly lighter background color on hover */
-    color: #ffffff; /* Maintain white color on hover */
-    text-decoration: none; /* Remove underline on hover */
-  }
-  
-  .main-content {
-    padding: 40px; /* Increased padding for the main content area */
-    background-color: #ffffff; /* White background for the main content area */
-    border-radius: 10px; /* Rounded corners for the main content area */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for the main content area */
-  }
-  
-  h1 {
-    color: #343a40; /* Dark color for headings */
-  }
-  
+}
+

@@ -8,6 +8,7 @@ import { BrowserRouter as Link } from 'react-router-dom';
 import Blog from './components/farmer/blog/Blog';
 import Horibar from './components/farmer/horibar/Horibar';
 import Analytics from './components/ngo/analytics/Analytics';
+import Home from './components/farmer/home/Home';
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
 <Router>
       <Routes>
         <Route path="/" element={<Horibar />} />
-        {/* <Route path="/dashboard/*" element={<LandInfo />} /> */}
-        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/dashboard/blog" element={<Blog />} />
       </Routes>
     </Router>
     </div>

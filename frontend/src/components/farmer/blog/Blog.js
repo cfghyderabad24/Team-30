@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Card, Row, Col } from 'react-bootstrap';
-
+import Horibar from '../horibar/Horibar';
 import './Blog.css'
 function Blog() {
 
@@ -23,6 +23,8 @@ function Blog() {
     ];
 
     return (
+        <div>
+        <Horibar/>
         <Container className="custom-container">
             <div className="card-container">
                 {videos.map((video, index) => (
@@ -47,6 +49,7 @@ function Blog() {
                 ))}
             </div>
         </Container>
+        </div>
     );
 }
 
