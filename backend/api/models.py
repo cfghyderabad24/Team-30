@@ -3,6 +3,7 @@ from django.db import models
 class Farmer(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     pincode = models.CharField(max_length=6)
     aadhar_no = models.CharField(max_length=12)
@@ -22,6 +23,7 @@ class MediaFile(models.Model):
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
     videofile = models.FileField(upload_to='videos/')
     textquery = models.CharField(max_length=100)
+    ngouploadvideo = models.FileField(upload_to='ngouploadvideos/', blank=True)
     def __str__(self):
         return f'MediaFile {self.farmer.id}'
 

@@ -9,33 +9,27 @@ from .serializers import FarmerSerializer,MediaFileSerializer
 def users_list(request):
     if request.method == 'GET':
         data = Farmer.objects.all()
-
         serializer = FarmerSerializer(data, context={'request': request}, many=True)
-
         return Response(serializer.data)
-
     elif request.method == 'POST':
         serializer = FarmerSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
-
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['PUT', 'DELETE'])
-def users_detail(request, id):
+def users_detail(request):
     try:
         user = Farmer.objects.get(id=id)
     except Farmer.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-
     if request.method == 'PUT':
-        serializer = FarmerSerializer(user, data=request.data, context={'request': request})
-        if serializer.is_valid():
-            serializer.save()
-            return Response(status=status.HTTP_204_NO_CONTENT)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        username = request.data.get('name')
+        password = request.data.get('password')
+        if user.username==username & user.password==password:
+            return Response(serializer.errors, status=status.HTTP_200_OK)
 
     elif request.method == 'DELETE':
         user.delete()
