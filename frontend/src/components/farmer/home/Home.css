@@ -1,0 +1,27 @@
+/* Home.css */
+.home-container {
+    padding: 40px 20px; /* Padding around the container */
+    background-color: #f8f9fa; /* Light grey background color */
+  }
+  
+  .info-card {
+    border: 1px solid #dee2e6; /* Border color for the cards */
+    border-radius: 10px; /* Rounded corners for the cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for the cards */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+  }
+  
+  .info-card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+  }
+  
+  .info-card .card-title {
+    font-size: 1.25rem; /* Increase font size of the card title */
+    color: #343a40; /* Dark color for the card title */
+  }
+  
+  .info-card .card-text {
+    font-size: 1rem; /* Regular font size for card text */
+    color: #6c757d; /* Muted color for card text */
+  }
+  
