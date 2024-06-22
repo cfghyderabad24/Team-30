@@ -3,21 +3,25 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './RootLayout';
 import LandInfo from './components/farmer/landInfo/LandInfo';
 import Blog from './components/farmer/blog/Blog';
+
 import Home from './components/farmer/home/Home';
 import Report from './components/farmer/report/Report';
 import TalkToExpert from './components/farmer/talkToExpert/TalkToExpert';
 import Analytics from './components/ngo/analytics/Analytics';
 import AnswerQueries from './components/ngo/answerQueries/AnswerQueries';
 import FarmerProfiles from './components/ngo/farmerProfiles/FarmerProfiles';
-// import LoginPage from './LoginPage';
+import LoginPage from './LoginPage';
+
+
+
 
 
 function App() {
   const router=createBrowserRouter([
-    // {
-    // path:"/",
-    // element:<LoginPage></LoginPage>
-    // },
+    {
+     path:"/",
+     element:<LoginPage></LoginPage>
+    },
   {
     path:"/blog",
     element:<Blog></Blog>
@@ -56,8 +60,9 @@ function App() {
 
   return (
     <div >
+
       <RouterProvider router={router}/>
-    </div>
+</div>
   );
 }
 
