@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Horibar.css'; 
+import './Horizontalbar.css'; 
 
-function Horibar() {
+function Horizontalbar() {
   return (
     <div>
-      
+      {/* Top Navbar */}
       <Navbar bg="light" expand="lg" className="top-navbar">
         <Navbar.Brand href="#home">IFTR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,4 +26,4 @@ function Horibar() {
   )
 }
 
-export default Horibar
+export default Horizontalbar

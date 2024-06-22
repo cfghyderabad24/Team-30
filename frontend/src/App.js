@@ -1,6 +1,8 @@
 import './App.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import RootLayout from './RootLayout';
+
+
+
 import LandInfo from './components/farmer/landInfo/LandInfo';
 import Blog from './components/farmer/blog/Blog';
 
@@ -10,6 +12,7 @@ import TalkToExpert from './components/farmer/talkToExpert/TalkToExpert';
 import Analytics from './components/ngo/analytics/Analytics';
 import AnswerQueries from './components/ngo/answerQueries/AnswerQueries';
 import FarmerProfiles from './components/ngo/farmerProfiles/FarmerProfiles';
+
 import LoginPage from './LoginPage';
 
 
@@ -41,9 +44,6 @@ function App() {
   {
     path:"talkToExpert",
     element:<TalkToExpert></TalkToExpert>
-  },{
-    path:"/analytics",
-    element:<Analytics></Analytics>
   },
   {
     path:"/answerQueries",
