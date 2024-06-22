@@ -51,6 +51,9 @@ function App() {
   {
     path:"/farmerProfiles",
     element:<FarmerProfiles></FarmerProfiles>
+  },{
+    path:"/analytics",
+    element:<Analytics></Analytics>
   }
 
 

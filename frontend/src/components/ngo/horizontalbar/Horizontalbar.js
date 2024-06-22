@@ -12,11 +12,10 @@ function Horizontalbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/home">Home</Nav.Link>
-            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-            <Nav.Link as={Link} to="/landInfo">Land Info</Nav.Link>
-            <Nav.Link as={Link} to="/report">Report</Nav.Link>
-            <Nav.Link as={Link} to="/talkToExpert">Talk to Expert</Nav.Link>
+            <Nav.Link as={Link} to="/analytics">Analytics</Nav.Link>
+            <Nav.Link as={Link} to="/answerQueries">Queries</Nav.Link>
+            <Nav.Link as={Link} to="/farmerProfiles">Farmer Profiles</Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
