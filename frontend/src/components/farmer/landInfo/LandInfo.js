@@ -44,8 +44,7 @@ function LandInfo() {
   };
 
   return (
-    <div className="">
-      <Horibar />
+    
       <Form className="p-4" onSubmit={handleSubmit}>
         <h1 className="mb-4">Farmer Registration</h1>
         
@@ -275,7 +274,7 @@ function LandInfo() {
           Submit
         </Button>
       </Form>
-    </div>
+    
   );
 }
 

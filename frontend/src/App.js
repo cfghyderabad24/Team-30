@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 
 
-import LandInfo from './components/farmer/landInfo/LandInfo';
+//import LandInfo from './components/farmer/landInfo/LandInfo';
 import Blog from './components/farmer/blog/Blog';
 import Home from './components/farmer/home/Home';
 import Report from './components/farmer/report/Report';
@@ -11,6 +11,7 @@ import TalkToExpert from './components/farmer/talkToExpert/TalkToExpert';
 import Analytics from './components/ngo/analytics/Analytics';
 import AnswerQueries from './components/ngo/answerQueries/AnswerQueries';
 import FarmerProfiles from './components/ngo/farmerProfiles/FarmerProfiles';
+import Profile from './components/farmer/profile/Profile';
 
 import LoginPage from './LoginPage';
 
@@ -33,8 +34,8 @@ function App() {
     element:<Home></Home>
   },
   {
-    path:"/landInfo",
-    element:<LandInfo></LandInfo>
+    path:"/profile",
+    element:<Profile></Profile>
   },
   {
     path:"/report",
