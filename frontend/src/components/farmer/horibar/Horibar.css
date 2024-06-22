@@ -1,44 +1,48 @@
+/* Horibar.css */
 
-body {
-    background-color: #f8f9fa; 
-  }
-  
-  .horibar {
-    font-family: Arial, sans-serif;
-    position: sticky;
-  }
-  
-  .top-navbar {
-    padding: 20px 40px; 
-    background-color: #343a40; 
-  }
-  
-  .top-navbar .nav-links .nav-link {
-    color: #ffffff; 
-    margin-right: 20px; 
-    transition: color 0.3s, background-color 0.3s; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-  }
-  
-  .top-navbar .nav-links .nav-link:last-child {
+.top-navbar {
+  background-color: #ff6600; /* A bright orange background */
+  padding: 15px 20px; /* Increase padding for a more substantial look */
+}
+
+.top-navbar .navbar-brand {
+  color: #ffffff; /* White text for the brand */
+  font-weight: bold;
+  font-size: 1.5rem; /* Increase the font size */
+}
+
+.top-navbar .navbar-brand:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.top-navbar .nav-link {
+  color: #ffffff; /* White text for the links */
+  font-size: 1.2rem; /* Increase the font size */
+  margin-right: 15px; /* Add some spacing between links */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.top-navbar .nav-link:hover {
+  color: #83f0a4; /* Dark blue on hover */
+}
+
+.top-navbar .nav-link.active {
+  font-weight: bold; /* Make active link bold */
+}
+
+.top-navbar .navbar-toggler {
+  border-color: #ffffff; /* White border for the toggle button */
+}
+
+.top-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  /* Custom white icon for the toggle button */
+}
+
+@media (max-width: 991px) {
+  .top-navbar .nav-link {
     margin-right: 0;
+    margin-bottom: 10px;
   }
-  
-  .top-navbar .nav-links .nav-link:hover {
-    background-color: #495057; 
-    color: #ffffff; 
-    text-decoration: none; 
-  }
-  
-  .main-content {
-    padding: 40px; 
-    background-color: #ffffff; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
-  h1 {
-    color: #343a40; 
-  }
-  
+}
