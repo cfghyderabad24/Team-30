@@ -25,7 +25,6 @@ def users_detail(request, id):
         user = Farmer.objects.get(id=id)
     except Farmer.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-
     if request.method == 'PUT':
         serializer = FarmerSerializer(user, data=request.data, context={'request': request})
         if serializer.is_valid():
@@ -36,7 +35,7 @@ def users_detail(request, id):
     elif request.method == 'DELETE':
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
+    
 @api_view(['POST'])
 def videoupload(request):
     if request.method == 'POST':
