@@ -21,15 +21,6 @@ function Horibar() {
         </Navbar.Collapse>
       </Navbar>
 
-      {/* Main Content Area
-      <Container fluid>
-        <Row>
-          <Col md={12} className="main-content">
-            <h1>Dashboard</h1>
-            {/* Add more components and content here */}
-          {/* </Col>
-        </Row>
-      </Container> */} 
     </div>
   )
 }
