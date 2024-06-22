@@ -1,58 +1,37 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import './Home.css'; 
 import Horibar from '../horibar/Horibar';
+
 const Home = () => {
+  const handleButtonClick = () => {
+    window.location.href = 'https://golden-lily-11402c.netlify.app/';
+  };
+
   return (
-    <div className="">
-        <Horibar></Horibar>
-    <Container className="home-container">
-      <Row>
-        <Col md={6} lg={3} className="mb-4">
-          <Card className="info-card">
-            <Card.Body>
-              <Card.Title>Temperature</Card.Title>
-              <Card.Text>
-                Current temperature: 28°C
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} lg={3} className="mb-4">
-          <Card className="info-card">
-            <Card.Body>
-              <Card.Title>Crop Selection</Card.Title>
-              <Card.Text>
-                Best crops to plant this season: Wheat, Corn
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} lg={3} className="mb-4">
-          <Card className="info-card">
-            <Card.Body>
-              <Card.Title>Soil Type</Card.Title>
-              <Card.Text>
-                Ideal soil type: Loamy soil
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} lg={3} className="mb-4">
-          <Card className="info-card">
-            <Card.Img variant="top" src="https://via.placeholder.com/150" alt="Example image" />
-            <Card.Body>
-              <Card.Title>Picture</Card.Title>
-              <Card.Text>
-                An example of a good farming practice.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-    </div>);
-}
+    <div className="home-page">
+      <Horibar />
+      <Container className="home-container d-flex flex-column align-items-center justify-content-center">
+        <Row className="justify-content-center mb-5">
+          <Col md={8} className="text-center">
+            <img
+              src="https://www.shutterstock.com/image-photo/green-field-under-beautiful-dark-blue-142404247"
+              alt="Weather related"
+              className="img-fluid rounded shadow-lg mb-4"
+              style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }}
+            />
+            <h2 className="mb-3">Explore Weather Details</h2>
+            <p className="text-muted mb-4">
+              Discover the latest weather information at your fingertips.
+            </p>
+            <Button variant="primary" onClick={handleButtonClick}>
+              Go to Weather Details
+            </Button>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+};
 
 export default Home;
-
