@@ -35,7 +35,7 @@ def users_detail(request, id):
     elif request.method == 'DELETE':
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
+
 @api_view(['POST'])
 def videoupload(request):
     if request.method == 'POST':

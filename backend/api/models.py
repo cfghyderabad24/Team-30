@@ -22,6 +22,7 @@ class MediaFile(models.Model):
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
     videofile = models.FileField(upload_to='videos/')
     textquery = models.CharField(max_length=100)
+    ngouploadvideo = models.FileField(upload_to='ngouploadvideos/', blank=True)
     def __str__(self):
         return f'MediaFile {self.farmer.id}'
 
