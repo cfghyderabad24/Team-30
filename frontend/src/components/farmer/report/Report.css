@@ -1,0 +1,23 @@
+.report-container {
+    padding-top: 60px; /* Adjust based on the height of your Horibar */
+    padding: 20px;
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

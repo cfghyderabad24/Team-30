@@ -1,24 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+
+
+import LandInfo from './components/farmer/landInfo/LandInfo';
+import Blog from './components/farmer/blog/Blog';
+import Home from './components/farmer/home/Home';
+import Report from './components/farmer/report/Report';
+import TalkToExpert from './components/farmer/talkToExpert/TalkToExpert';
+import Analytics from './components/ngo/analytics/Analytics';
+import AnswerQueries from './components/ngo/answerQueries/AnswerQueries';
+import FarmerProfiles from './components/ngo/farmerProfiles/FarmerProfiles';
+
+import LoginPage from './LoginPage';
+
+
+
+
 
 function App() {
+  const router=createBrowserRouter([
+    {
+     path:"/",
+     element:<LoginPage></LoginPage>
+    },
+  {
+    path:"/blog",
+    element:<Blog></Blog>
+  },
+  {
+    path:"/home",
+    element:<Home></Home>
+  },
+  {
+    path:"/landInfo",
+    element:<LandInfo></LandInfo>
+  },
+  {
+    path:"/report",
+    element:<Report></Report>
+  },
+  {
+    path:"talkToExpert",
+    element:<TalkToExpert></TalkToExpert>
+  },
+  {
+    path:"/answerQueries",
+    element:<AnswerQueries></AnswerQueries>
+  },
+  {
+    path:"/farmerProfiles",
+    element:<FarmerProfiles></FarmerProfiles>
+  },{
+    path:"/analytics",
+    element:<Analytics></Analytics>
+  }
+
+
+])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div >
+
+      <RouterProvider router={router}/>
+</div>
   );
 }
 

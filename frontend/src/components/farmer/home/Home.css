@@ -1,0 +1,17 @@
+.home-page {
+  background-color: #f8f9fa; /* Light grey background */
+  min-height: 100vh;
+  padding-top: 50px; /* Ensures content is below the navbar */
+}
+
+.home-container {
+  text-align: center;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+.shadow-lg {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}

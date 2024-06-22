@@ -1,0 +1,43 @@
+/* Dashboard.css */
+body {
+    background-color: #f8f9fa; /* Light grey background for the entire page */
+  }
+  
+  .dashboard {
+    font-family: Arial, sans-serif;
+  }
+  
+  .top-navbar {
+    padding: 20px 40px; /* Increased padding for the navbar */
+    background-color: #343a40; /* Dark background color for the navbar */
+  }
+  
+  .top-navbar .nav-links .nav-link {
+    color: #ffffff; /* White color for navbar links */
+    margin-right: 20px; /* Equal spacing between the links */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
+    padding: 10px 15px; /* Padding inside each nav link */
+    border-radius: 5px; /* Rounded corners for nav links */
+  }
+  
+  .top-navbar .nav-links .nav-link:last-child {
+    margin-right: 0; /* Remove right margin from the last nav link */
+  }
+  
+  .top-navbar .nav-links .nav-link:hover {
+    background-color: #495057; /* Slightly lighter background color on hover */
+    color: #ffffff; /* Maintain white color on hover */
+    text-decoration: none; /* Remove underline on hover */
+  }
+  
+  .main-content {
+    padding: 40px; /* Increased padding for the main content area */
+    background-color: #ffffff; /* White background for the main content area */
+    border-radius: 10px; /* Rounded corners for the main content area */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for the main content area */
+  }
+  
+  h1 {
+    color: #343a40; /* Dark color for headings */
+  }
+  
