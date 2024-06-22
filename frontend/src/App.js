@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './RootLayout';
 import LandInfo from './components/farmer/landInfo/LandInfo';
 import Blog from './components/farmer/blog/Blog';
-
 import Home from './components/farmer/home/Home';
 import Report from './components/farmer/report/Report';
 import TalkToExpert from './components/farmer/talkToExpert/TalkToExpert';
