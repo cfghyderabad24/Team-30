@@ -14,9 +14,9 @@ function Horibar() {
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-            <Nav.Link as={Link} to="/dashboard/landinfo">Land Info</Nav.Link>
-            <Nav.Link as={Link} to="/dashboard/report">Report</Nav.Link>
-            <Nav.Link as={Link} to="/dashboard/talk-to-expert">Talk to Expert</Nav.Link>
+            <Nav.Link as={Link} to="/landinfo">Land Info</Nav.Link>
+            <Nav.Link as={Link} to="/report">Report</Nav.Link>
+            <Nav.Link as={Link} to="/talk-to-expert">Talk to Expert</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
