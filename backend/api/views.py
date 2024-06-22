@@ -11,6 +11,7 @@ def users_list(request):
         serializer = FarmerSerializer(data, context={'request': request}, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
+        print("fgndks")
         serializer = FarmerSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

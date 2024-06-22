@@ -15,8 +15,8 @@ const LoginPage = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    
-    axios.post('http://localhost:8000/login/', { email, password, user_type: userType })
+
+    axios.post(`http://localhost:8000/login/${email}&${password}/`, { user_type: userType })
       .then(response => {
         if (response.data.success) {
           navigate('/home');
@@ -71,7 +71,7 @@ const LoginPage = () => {
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
-                      type="email"
+                      type="name"
                       placeholder="Enter email"
                       required
                       value={email}
