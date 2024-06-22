@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './Home.css'; 
 import Horibar from '../horibar/Horibar';
 
 const Home = () => {
+  useEffect(() => {
+    const tawk = document.createElement("script");
+    tawk.type = "text/javascript";
+    tawk.async = true;
+    tawk.src = "https://embed.tawk.to/6598b9728d261e1b5f5028a2/1hje98qdk";
+    // tawk.src = "https://tawk.to/chat/66773fb0eaf3bd8d4d136675/1i10t1jai";
+    tawk.charset = "UTF-8";
+    document.head.appendChild(tawk);
+
+    return () => {
+      document.head.removeChild(tawk);
+    };
+  }, []);
   const handleButtonClick = () => {
     window.location.href = 'https://golden-lily-11402c.netlify.app/';
   };
-
   return (
     <div className="home-page">
       <Horibar />
