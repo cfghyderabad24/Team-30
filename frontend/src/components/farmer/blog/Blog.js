@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Blog.css';
+import Horibar from '../horibar/Horibar';
 
 const VideoList = ({ videos, searchTerm, handleSearch }) => {
     const filterVideo = videos.filter(video =>
@@ -13,6 +14,7 @@ const VideoList = ({ videos, searchTerm, handleSearch }) => {
 
     return (
         <div>
+            
             <input
                 type="text"
                 placeholder="Search videos Here"
@@ -80,7 +82,7 @@ const Blog = () => {
     return (
         <div>
             <header>
-                <h1>IFTR</h1>
+                <Horibar/>
             </header>
             <h3>For Farmers</h3>
             <main>

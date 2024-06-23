@@ -108,7 +108,13 @@ const LoginPage = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </Form.Group>
-
+                  <Form.Group controlId="formUserType">
+                    <Form.Label>Login as</Form.Label>
+                    <Form.Control as="select" value={userType} onChange={handleUserTypeChange}>
+                      <option value="admin">Admin</option>
+                      <option value="farmer">Farmer</option>
+                    </Form.Control>
+                  </Form.Group>
                   <Form.Group controlId="formLanguage">
                     <Form.Label>Select Language</Form.Label>
                     <Form.Control as="select" value={language} onChange={handleLanguageChange}>
