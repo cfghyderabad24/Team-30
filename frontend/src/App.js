@@ -50,6 +50,10 @@ function App() {
     {
       path: '/analytics',
       element: <Analytics />,
+    },
+    {
+      path:'/landInfo',
+      element:<LandInfo></LandInfo>
     }
   ]);
 
