@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { LanguageContext } from './LanguageContext';
 
 const LoginPage = () => {
   const [userType, setUserType] = useState('admin'); // default to admin
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { language, setLanguage } = useContext(LanguageContext); // Language context
 
   const handleUserTypeChange = (event) => {
     setUserType(event.target.value);
+  };
+
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
   };
 
   const handleLogin = (event) => {
@@ -59,7 +65,16 @@ const LoginPage = () => {
       borderRadius: '0.5rem',
       width: '100%',
       maxWidth: '400px', // Limit form width for better look
-    }
+    },
+    caption: {
+      marginTop: '1rem',
+      textAlign: 'center',
+    },
+    link: {
+      color: '#007bff',
+      textDecoration: 'none',
+      cursor: 'pointer',
+    },
   };
 
   return (
@@ -102,10 +117,24 @@ const LoginPage = () => {
                     </Form.Control>
                   </Form.Group>
 
+                  <Form.Group controlId="formLanguage">
+                    <Form.Label>Select Language</Form.Label>
+                    <Form.Control as="select" value={language} onChange={handleLanguageChange}>
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                      <option value="zh-CN">Chinese</option>
+                    </Form.Control>
+                  </Form.Group>
+
                   <Button variant="primary" type="submit" className="w-100 mt-3">
                     Login
                   </Button>
                 </Form>
+                <div style={styles.caption}>
+                  <p>Are you a Farmer not Registered? <span style={styles.link} onClick={() => navigate('/landInfo')}>Register now</span></p>
+                </div>
               </div>
             </Col>
           </Row>
