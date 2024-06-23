@@ -16,7 +16,6 @@ function LandInfo() {
     season: '',
     crop_grown: '',
     seeds_used: '',
-    
     date_of_seed_sown: '',
     transplanting_method: '',
     irrigation_method: '',
