@@ -1,25 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { LanguageContext } from './LanguageContext';
 
 const LoginPage = () => {
   const [userType, setUserType] = useState('admin'); // default to admin
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { language, setLanguage } = useContext(LanguageContext); // Language context
 
   const handleUserTypeChange = (event) => {
     setUserType(event.target.value);
   };
 
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
+  };
+
   const handleLogin = (event) => {
     event.preventDefault();
-
-    axios.post(`http://localhost:8000/login/${email}&${password}/`, { user_type: userType })
+    
+    axios.post('http://localhost:8000/login/', { name, password, user_type: userType })
       .then(response => {
         if (response.data.success) {
-          navigate('/home');
+          if (userType === 'admin') {
+            navigate('/analytics');
+          } else {
+            navigate('/home');
+          }
         } else {
           alert('Incorrect credentials');
         }
@@ -55,7 +65,16 @@ const LoginPage = () => {
       borderRadius: '0.5rem',
       width: '100%',
       maxWidth: '400px', // Limit form width for better look
-    }
+    },
+    caption: {
+      marginTop: '1rem',
+      textAlign: 'center',
+    },
+    link: {
+      color: '#007bff',
+      textDecoration: 'none',
+      cursor: 'pointer',
+    },
   };
 
   return (
@@ -68,14 +87,14 @@ const LoginPage = () => {
               <div style={styles.loginForm}>
                 <h2 className="text-center mb-4">Login</h2>
                 <Form onSubmit={handleLogin}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                  <Form.Group controlId="formBasicName">
+                    <Form.Label>Name</Form.Label>
                     <Form.Control
-                      type="name"
-                      placeholder="Enter email"
+                      type="text"
+                      placeholder="Enter username"
                       required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </Form.Group>
 
@@ -90,11 +109,14 @@ const LoginPage = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="formUserType">
-                    <Form.Label>Login as</Form.Label>
-                    <Form.Control as="select" value={userType} onChange={handleUserTypeChange}>
-                      <option value="admin">Admin</option>
-                      <option value="farmer">Farmer</option>
+                  <Form.Group controlId="formLanguage">
+                    <Form.Label>Select Language</Form.Label>
+                    <Form.Control as="select" value={language} onChange={handleLanguageChange}>
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                      <option value="zh-CN">Chinese</option>
                     </Form.Control>
                   </Form.Group>
 
@@ -102,6 +124,9 @@ const LoginPage = () => {
                     Login
                   </Button>
                 </Form>
+                <div style={styles.caption}>
+                  <p>Are you a Farmer not Registered? <span style={styles.link} onClick={() => navigate('/landInfo')}>Register now</span></p>
+                </div>
               </div>
             </Col>
           </Row>

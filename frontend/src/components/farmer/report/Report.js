@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card,Button } from 'react-bootstrap';
 import { Document, Page } from 'react-pdf';
 import Horibar from '../horibar/Horibar';
 import axios from 'axios';
@@ -9,6 +9,11 @@ const Report = () => {
   const [formData, setFormData] = useState(null);
   const [pdfFile, setPdfFile] = useState(null);
   const [numPages, setNumPages] = useState(null);
+
+  const handleDownloadPDF = () => {
+    // Replace with logic to download PDF
+    alert('Downloading PDF...');
+  };
 
   useEffect(() => {
     // Fetch registration data from the backend
@@ -28,7 +33,9 @@ const Report = () => {
 
   return (
     
-    <Container className="report-container">
+    <div>
+      <Horibar></Horibar>
+      <Container className="report-container">
       <Row>
         <Col md={6}>
           <Card className="mb-4">
@@ -88,7 +95,9 @@ const Report = () => {
                   ))}
                 </Document>
               ) : (
-                <p>Loading PDF...</p>
+                <Button variant="primary" onClick={handleDownloadPDF}>
+                  Download PDF
+                </Button>
               )}
             </Card.Body>
           </Card>
@@ -104,6 +113,7 @@ const Report = () => {
         </Col>
       </Row>
     </Container>
+    </div>
     
   );
 };
