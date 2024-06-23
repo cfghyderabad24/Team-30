@@ -1,57 +1,93 @@
-import React from 'react'
-import { Container, Card, Row, Col } from 'react-bootstrap';
-import Horibar from '../horibar/Horibar';
-import './Blog.css'
-function Blog() {
+import React, { useState } from 'react';
+import './Blog.css';
 
-    const videos = [
-        {
-            src: 'https://www.youtube.com/embed/4m8MIV8SwKQ',
-            title: 'Soil Sampling and Testing',
-            description: 'A comprehensive guide on how to properly sample and test soil.'
-        },
-        {
-            src: 'https://www.youtube.com/embed/5TBC4FF6m9o',
-            title: 'Understanding Soil Analysis Reports',
-            description: 'This video explains how to understand and interpret soil analysis reports.'
-        },
-        {
-            src: 'https://www.youtube.com/embed/fLtlVjYQoqY',
-            title: 'The Importance of Soil Testing',
-            description: 'Learn why soil testing is crucial for healthy crop production and sustainable farming.'
-        }
-    ];
+const VideoList = ({ videos, searchTerm, handleSearch }) => {
+    const filterVideo = videos.filter(video =>
+        video.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const getVideoId = (url) => {
+        const urlObj = new URL(url);
+        return urlObj.searchParams.get('v') || urlObj.pathname.split('/')[1];
+    };
 
     return (
-        
         <div>
-            <Horibar></Horibar>
-            <Container className="custom-container">
-            <div className="card-container">
-                {videos.map((video, index) => (
-                    <Card className="mb-4" key={index}>
-                        <Row noGutters>
-                            <Col md={6} className="video-col">
-                                <iframe
-                                    src={video.src}
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            </Col>
-                            <Col md={6} className="description-col">
-                                <Card.Body className="custom-card-body">
-                                    <Card.Title>{video.title}</Card.Title>
-                                    <Card.Text>{video.description}</Card.Text>
-                                </Card.Body>
-                            </Col>
-                        </Row>
-                    </Card>
+            <input
+                type="text"
+                placeholder="Search videos Here"
+                value={searchTerm}
+                onChange={e => handleSearch(e.target.value)}
+            />
+            <ul>
+                {filterVideo.map(video => (
+                    <li key={video.id}>
+                        <div>
+                            <a href={video.link} target="_blank" rel="noopener noreferrer">
+                                <h3>{video.title}</h3>
+                                <img
+                                    src={`https://img.youtube.com/vi/${getVideoId(video.link)}/0.jpg`}
+                                    alt="Video Preview"
+                                />
+                            </a>
+                        </div>
+                    </li>
                 ))}
-            </div>
-        </Container>
+            </ul>
         </div>
     );
-}
+};
 
-export default Blog
+const Blog = () => {
+    const [search_Term, set_Search_Term] = useState('');
+    const [videos, setVideos] = useState([
+        {
+            id: 1,
+            title: 'Indian Agriculture Challenges and Opportunities',
+            link: 'https://youtu.be/AvqVWJXoa9E?si=DzjzrnI-kRaSSbdU',
+        },
+        {
+            id: 2,
+            title: 'Soil Test Results',
+            link: 'https://youtu.be/UK_L6xVAw_A?si=gE33YRRqqmLcjeVL',
+        },
+        {
+            id: 3,
+            title: 'Chemical Analysis of Soil',
+            link: 'https://youtu.be/bjUHOLkeROM?si=n21G__xahBeoTJk4',
+        },
+        {
+            id: 4,
+            title: 'Ways to Protect Crops from Insects',
+            link: 'https://youtu.be/BB8AAAIhuPI?si=XJ5JdxwYclCb7R2j',
+        },
+        {
+            id: 5,
+            title: 'Ways to Protect Crops from Cold Weather',
+            link: 'https://youtu.be/nwUo6Z5n64s?si=dOWZiTgMFYDBriVb',
+        },
+        {
+            id: 6,
+            title: 'Organic Farming',
+            link: 'https://youtu.be/lRyXlvIJFWI?si=-RkSOSTQA0-2UhMT',
+        },
+    ]);
+
+    const searchFn = query => {
+        set_Search_Term(query);
+    };
+
+    return (
+        <div>
+            <header>
+                <h1>IFTR</h1>
+            </header>
+            <h3>For Farmers</h3>
+            <main>
+                <VideoList videos={videos} searchTerm={search_Term} handleSearch={searchFn} />
+            </main>
+        </div>
+    );
+};
+
+export default Blog;
