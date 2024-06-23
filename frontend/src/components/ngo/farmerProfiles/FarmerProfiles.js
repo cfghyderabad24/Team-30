@@ -1,22 +1,60 @@
 // src/components/FarmerProfiles.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import './FarmerProfiles.css';
 
-const FarmerProfiles = () => {
-    const [profiles, setProfiles] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
+const profiles = [
+    {
+        id: 1,
+        name: 'Ajay Raj',
+        age: 26,
+        gender: 'Male',
+        location: 'Punjab',
+        image: 'img1.jpg'
+    },
+    {
+        id: 2,
+        name: 'Jaya Rani',
+        age: 28,
+        gender: 'Female',
+        location: 'Chhattisgarh',
+        image: 'img2.jpg'
+    },
+    {
+        id: 3,
+        name: 'Ronny Singh',
+        age: 26,
+        gender: 'Male',
+        location: 'Pune',
+        image: 'img3.jpg'
+    },
+    {
+        id: 4,
+        name: 'Emily White',
+        age: 26,
+        gender: 'Female',
+        location: 'Kansas',
+        image: 'img4.jpg'
+    },
+    {
+        id: 5,
+        name: 'Aditya',
+        age: 26,
+        gender: 'Male',
+        location: 'Noida',
+        image: 'img5.jpg'
+    },
+    {
+        id: 6,
+        name: 'David',
+        age: 26,
+        gender: 'Male',
+        location: 'Khorda',
+        image: 'img6.jpg'
+    }
+];
 
-    useEffect(() => {
-        // Fetch data from backend using Axios
-        axios.get('http://localhost:8000/farmer_profiles') // Replace with your backend API endpoint
-            .then(response => {
-                setProfiles(response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    }, []); // Empty dependency array ensures useEffect runs only once on component mount
+const FarmerProfiles = () => {
+    const [searchTerm, setSearchTerm] = useState('');
 
     const filteredProfiles = profiles.filter(profile =>
         profile.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -30,9 +68,9 @@ const FarmerProfiles = () => {
         <div className="card">
             <div className="info">
                 <h2>{profile.name}</h2>
-                <p>Address: {profile.address}</p>
-                <p>Contact Number: {profile.contact_no}</p>
-                <p>Crop Grown: {profile.crop_grown}</p>
+                <p>Age: {profile.age}</p>
+                <p>Gender: {profile.gender}</p>
+                <p>Location: {profile.location}</p>
                 <button>Uploading the Soil Report</button>
             </div>
         </div>
