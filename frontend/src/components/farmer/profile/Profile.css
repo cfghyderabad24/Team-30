@@ -1,24 +1,23 @@
 .landinfo-container {
-    padding-top: 60px; /* Adjust based on the height of your Horibar */
-    padding: 20px;
-    position: relative;
-  }
-  
-  .form-label {
-    text-transform: capitalize;
-  }
-  
-  .form-buttons {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
-  
-  .save-button {
-    margin-right: 10px;
-  }
-  
-  .edit-button {
-    margin-left: 10px;
-  }
-  
+  padding-top: 60px; /* Adjust based on the height of your Horibar */
+  padding: 20px;
+  position: relative;
+}
+
+.form-label {
+  text-transform: capitalize;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.save-button {
+  margin-right: 10px;
+}
+
+.edit-button {
+  margin-left: 10px;
+}
