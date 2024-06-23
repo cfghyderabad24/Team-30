@@ -7,7 +7,7 @@ function Horizontalbar() {
   return (
     <div>
       {/* Top Navbar */}
-      <Navbar bg="light" expand="lg" className="top-navbar">
+      <Navbar bg="black" expand="lg" className="top-navbar">
         <Navbar.Brand href="#home">IFTR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
