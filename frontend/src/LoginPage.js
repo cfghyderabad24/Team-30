@@ -117,16 +117,6 @@ const LoginPage = () => {
                     </Form.Control>
                   </Form.Group>
 
-                  <Form.Group controlId="formLanguage">
-                    <Form.Label>Select Language</Form.Label>
-                    <Form.Control as="select" value={language} onChange={handleLanguageChange}>
-                      <option value="en">English</option>
-                      <option value="es">Spanish</option>
-                      <option value="fr">French</option>
-                      <option value="de">German</option>
-                      <option value="zh-CN">Chinese</option>
-                    </Form.Control>
-                  </Form.Group>
 
                   <Button variant="primary" type="submit" className="w-100 mt-3">
                     Login
